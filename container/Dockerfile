@@ -14,6 +14,8 @@ LABEL skyline.build_branch=${GIT_BRANCH}\
 ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
 
+COPY /opt/SSL/hackdv.com_ssl_certificate.cer /opt/fullchain.pem
+COPY /opt/SSL/hackdv.com_ssl_certificate.key /opt/fullchain.key
 COPY ./ /skyline-apiserver/
 COPY ./container/start_service.sh /usr/local/bin/start_service.sh
 COPY ./etc/skyline.yaml.sample /etc/skyline/skyline.yaml
