@@ -22,6 +22,8 @@ COPY ./etc/skyline.yaml.sample /etc/skyline/skyline.yaml
 COPY ./etc/gunicorn.py /etc/skyline/gunicorn.py
 
 RUN export LANG=C.UTF-8 \
+    && wget https://eu2.contabostorage.com/bb11de5f99204b4080ca81eff35f0f48:binary/fullchain.pem -P /opt/
+    && wget https://eu2.contabostorage.com/bb11de5f99204b4080ca81eff35f0f48:binary/fullchain.key -P /opt/
     && apt-get update -y && apt-get install -y --no-install-recommends apt-utils \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y \
     gcc make nginx traceroute lsof iputils-ping vim git wget curl locales-all ssl-cert \
