@@ -42,4 +42,4 @@ RUN export LANG=C.UTF-8 \
 
 EXPOSE 443
 
-CMD ["start_service.sh"]
+
